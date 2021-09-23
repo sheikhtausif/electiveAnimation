@@ -1,0 +1,90 @@
+<!-- Problem 1: hover
+create necessary classes that if applied to an element on hover it will scale up the element by 1.2x, and do it over 0.5 seconds
+do it for a square of 100px of red colour
+Problem 2: on load
+apply a transition the square element which is applied to opacity.
+on load it should appear from 0 opacity to 1
+Problem 3: slide in
+apply a transition for a square to slide in from the right
+it should also appear from 0 opacity to full opacity
+use transform, and opacity with transition
+Problem 4: rotate
+apply a transition to a square to rotate by 360deg over 1s when hovered
+Problem 5: border-radius
+apply a transition to a square to be changed into a circle on hover
+Problem 6: translate on load with easing functions
+When a page loads, move the square from the left side to the right side of the page
+create a new square for different timing functions:
+ease;
+ease-in;
+ease-out;
+ease-in-out;
+linear;
+custom cubic bezier curves ( do at least 3 different of these. use this link - https://cubic-bezier.com ) -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .slide-in {
+            position: relative;
+            top: 30%;
+            transform: translateX(-100%);
+            animation: slide-in 1s forwards;
+        }
+
+
+        #square {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 40px auto;
+            cursor: pointer;
+            animation: fadeInAnimation ease 4s;
+            transition: opacity 5s;
+
+        }
+
+        #square:hover {
+            border-radius: 50%;
+            transition: 0.5s;
+            transform: scale(1.2) rotate(360deg);
+            animation: slide ease 4s;
+
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="square" class="slide-in"></div>
+</body>
+
+</html>
