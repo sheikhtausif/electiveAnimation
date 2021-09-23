@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hamburger</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            top: 40%;
+            left: 48%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 60px;
+            height: 8px;
+            background-color: rgb(8, 241, 241);
+            margin: 7px 0;
+            transition: 0.4s;
+        }
+
+        .change .bar1 {
+            transform: rotate(-45deg) translate(-12px, 11.5px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            transform: rotate(45deg) translate(-9.5px, -9px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" onclick="handleToggle(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+</body>
+
+<script>
+    function handleToggle(change) {
+        change.classList.toggle("change");
+    }
+</script>
+
+</html>
